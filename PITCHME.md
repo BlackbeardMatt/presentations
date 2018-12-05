@@ -11,3 +11,6 @@ defmodule ModuleName do
   end
 end
 ```
+@[01-01](Define the module)
+@[02-04](Define the function)
+@[03-03](Output to the world!)

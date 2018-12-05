@@ -38,6 +38,8 @@ footnote : "GitPitch - The Fastest Way From Idea To Presentation"
 #
 published : true
 
+code-line-numbers : true
+
 #
 # Twitter Card Settings [Pro Only]
 # Doc: https://gitpitch.com/docs/settings/twitter-card
