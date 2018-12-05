@@ -20,7 +20,7 @@
 @snapend
 
 @snap[south]
-@size[0.5em](@fa[github](BlackbeardMatt))
+@size[0.4em](@fa[github](BlackbeardMatt) @fa[twitter](BlackbeardMatt) @fa[email](matthew.schladweiler@gmail.com))
 @snapend
 ---
 ```elixir
