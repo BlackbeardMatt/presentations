@@ -8,10 +8,14 @@
 ![ProfilePic](assets/img/me.jpg)
 @snapend
 @snap[west]
-### MSOE 2018 Graduate
+### MSOE 2018 SE Graduate
 ### Software Engineer
+### Centarian
 @snapend
-@snap[south] @size[0.5em](@fagithub)[@BlackbeardMatt](https://github.com/BlackbeardMatt)) @snapend
+@snap[north]
+## Matthew Schladweiler
+@snapend
+@snap[south] @size[0.5em]((@fagithub)[@BlackbeardMatt](https://github.com/BlackbeardMatt)) @snapend
 ---
 ```elixir
 defmodule ModuleName do
