@@ -2,7 +2,8 @@
 ### Matthew Schladweiler
 ![Logo](assets/img/elixir_logo.png)
 
---- @title[About Me]
+--- 
+@title[About Me]
 @snap[east]
 ![ProfilePic](assets/img/me.jpg)
 @snapend
