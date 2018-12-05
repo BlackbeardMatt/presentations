@@ -30,6 +30,6 @@
 .aboutme {
     border: none !important;
     box-shadow: none !important;
-    -webkit-clip-path: circle(80% at 100% 100%);
-    clip-path: circle(80% at 100% 100%);
+    -webkit-clip-path: circle(40% at 50% 50%);
+    clip-path: circle(40% at 50% 50%);
 }
