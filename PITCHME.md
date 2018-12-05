@@ -7,8 +7,8 @@
 ![ProfilePic](assets/img/me.jpg)
 @snapend
 @snap[west]
-MSOE 2018 Graduate
-Software Engineer
+### MSOE 2018 Graduate
+### Software Engineer
 @snapend
 @snap[south]
 @size[0.5em]([@BlackbeardMatt](https://github.com/BlackbeardMatt))
