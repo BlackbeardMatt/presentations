@@ -4,18 +4,24 @@
 
 --- 
 @title[About Me]
-@snap[east aboutme]
-![ProfilePic](assets/img/me.jpg)
-@snapend
+
 @snap[west]
 ### MSOE 2018 SE Graduate
 ### Software Engineer
 ### Centarian
 @snapend
+
 @snap[north]
-## Matthew Schladweiler
+### Matthew Schladweiler
 @snapend
-@snap[south] @size[0.5em]((@fagithub)[@BlackbeardMatt](https://github.com/BlackbeardMatt)) @snapend
+
+@snap[east aboutme]
+![ProfilePic](assets/img/me.jpg)
+@snapend
+
+@snap[south]
+@size[0.5em](@fa[github](BlackbeardMatt))
+@snapend
 ---
 ```elixir
 defmodule ModuleName do
