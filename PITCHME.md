@@ -2,11 +2,7 @@
 ### Matthew Schladweiler
 ![Logo](assets/img/elixir_logo.png)
 
---- 
-@title[About Me]
-@snap[east]
-![ProfilePic](assets/img/me.jpg)
-@snapend
+---?image=assets/img/me.jpg&position=right&size=42% 80% @title[About Me]
 @snap[west]
 ### MSOE 2018 Graduate
 ### Software Engineer
