@@ -3,7 +3,10 @@
 ![Logo](assets/img/elixir_logo.png)
 
 ---
-
+@snap[east]
+![ProfilePic](assets/img/me.jpg)
+@snapend
+---
 ```elixir
 defmodule ModuleName do
   def hello do
