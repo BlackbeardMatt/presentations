@@ -2,7 +2,7 @@
 ### Matthew Schladweiler
 ![Logo](assets/img/elixir_logo.png)
 
----
+--- @title[About Me]
 @snap[east]
 ![ProfilePic](assets/img/me.jpg)
 @snapend
@@ -10,9 +10,7 @@
 ### MSOE 2018 Graduate
 ### Software Engineer
 @snapend
-@snap[south]
-@size[0.5em]([@BlackbeardMatt](https://github.com/BlackbeardMatt))
-@snapend
+@snap[south] @size[0.5em](@fagithub)[@BlackbeardMatt](https://github.com/BlackbeardMatt)) @snapend
 ---
 ```elixir
 defmodule ModuleName do
