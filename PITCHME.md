@@ -31,6 +31,18 @@
 * Incredibly Fault-Tolerant
 * Built on top of the Erlang VM
 ---
+## Hello World is quite simple
+```elixir
+defmodule ModuleName do
+  def hello do
+    IO.puts "Hello World"
+  end
+end
+```
+@[01-01](Define the module)
+@[02-04](Define the function)
+@[03-03](Output to the world!)
+---
 ```elixir
 iex> a = 1
 1
@@ -191,28 +203,21 @@ count = 99
 do_something_with(count)
 print(count)
 ```
-We can expect this to print 99 without worry. 99 will be the value 99
+We can expect this to print 99 without worry.<br>
+99 will be the value 99
 ---
 ```python
 array = [1, 2, 3]
 do_something_with(array)
 print(array)
 ```
-@[1-3](Can we bo as sure here?)
+@[1-3](Can we be as sure here?)
 @[1](We know that array here is generally a reference, not a value)
-@[2](What is this passes array off to other threads)
+@[2](What if this passes array to other threads)
 @[3](Will this really be [1, 2, 3]?!)
 ---
-> "GOTO was evil because we asked, 'how did I get to this point of execution?'"
-> "Mutability leaves us with, 'how did I get to this state?'"
+> "GOTO was evil because we asked, 'how did I get to this point of execution?'
+> Mutability leaves us with, 'how did I get to this state?'"
+> - @fa[twitter](jessitron)
 ---
-```elixir
-defmodule ModuleName do
-  def hello do
-    IO.puts "Hello World"
-  end
-end
-```
-@[01-01](Define the module)
-@[02-04](Define the function)
-@[03-03](Output to the world!)
+
