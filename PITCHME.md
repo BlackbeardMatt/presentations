@@ -131,7 +131,7 @@ defstruct state:   :initialized,
 ---
 # Atoms
 Atoms are constants that represent something's name.
-```elxir
+```elixir
 iex> :fred
 :fred
 ```
@@ -143,6 +143,37 @@ iex> :fred = :fred
 :fred
 ```
 Two atoms with the same name will always compare as being equal, even if they were created on two different computers an ocean apart.
+---
+## Back to where we were...
+```elixir
+def check(%Rules{state: :initialized} = rules, :add_player), do:
+    {:ok, %Rules{rules | state: :players_set}}
+```
+@[1](So the method check here is actually PATTERN MATCHING)
+@[1](It is asking, does this key value map have my keys AND is state set to :initialized)
+@[1](Which is then assigns to the variable rules)
+@[2](It then returns a tuple with :ok meaning success and updates state to :players_set)
+---
+```elixir
+def check(%Rules{state: :player1_turn} = rules, {:guess_coordinate, :player1}), do:
+    {:ok, %Rules{rules | state: :player2_turn}}
+
+def check(%Rules{state: :player2_turn} = rules, {:guess_coordinate, :player2}), do:
+    {:ok, %Rules{rules | state: :player1_turn}}
+
+def check(%Rules{state: :player1_turn} = rules, {:win_check, win_or_not}) do
+    case win_or_not do
+        :no_win -> {:ok, rules}
+        :win    -> {:ok, %Rules{rules | state: :game_over}}
+    end
+end
+
+def check(%Rules{state: :player2_turn} = rules, {:win_check, win_or_not}) do
+    # Reverse of above
+end
+
+def check(_state, _action), do: :error
+```
 ---
 ```elixir
 defmodule ModuleName do
