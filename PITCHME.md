@@ -163,8 +163,8 @@ def check(%Rules{state: :player2_turn} = rules, {:guess_coordinate, :player2}), 
 
 def check(_state, _action), do: :error
 ```
-@[1-17](With this, we can whitelist actions...)
-@[18](And default errors when it doesn't match)
+@[1-5](With this, we can whitelist actions...)
+@[7](And default errors when it doesn't match)
 ---
 ## Helpful in Recursion
 ```elixir
