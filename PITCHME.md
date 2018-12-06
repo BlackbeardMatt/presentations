@@ -86,6 +86,29 @@ iex> c
 @[1-10](And this is because to make the pattern match, a = 1, b = 2, etc.)
 ---
 ```elixir
+iex> list = [1, 2, 3]
+[1, 2, 3]
+iex> [a, 2, b ] = list
+[1, 2, 3]
+iex> a
+1
+iex> b
+```
+@[3-4](This matches as a is assigned 1 and b is assigned 3)
+---
+```elixir
+iex> list = [1, 2, 3]
+[1, 2, 3]
+iex> [a, 1, b] = list
+** (MatchError) no match of right hand side value: [1, 2, 3]
+---
+## Think like Algebra
+x = a + 1<br>
+Not assigning x, instead <br>
+you are asserting
+---
+@[1-4](Here the match fails)
+```elixir
 defmodule ModuleName do
   def hello do
     IO.puts "Hello World"
