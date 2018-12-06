@@ -42,7 +42,7 @@ iex> a + 3
 @[01-01](The = is called the *match operator*)
 @[01-04](Elixir, will attempt to match the left-hand side to the right-hand side)
 @[01-04](If Elixir can make it true, then it will bind the variable a to value 1)
----
++++
 ```elixir
 iex> a = 1
 1
