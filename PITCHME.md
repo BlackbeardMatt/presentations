@@ -102,6 +102,7 @@ iex> list = [1, 2, 3]
 iex> [a, 1, b] = list
 ** (MatchError) no match of right hand side value: [1, 2, 3]
 ```
+@[1-4](Here the match fails)
 ---
 ## Think like Algebra
 x = a + 1<br>
@@ -109,7 +110,13 @@ Not assigning x, instead <br>
 you are asserting x and a + 1<br>
 have the same VALUE.
 ---
-@[1-4](Here the match fails)
+## Why is this important?
+---
+```elixir
+def check(%Rules{state: :initialized} = rules, :add_player), do:
+    {:ok, %Rules{rules | state: :players_set}}
+```
+---
 ```elixir
 defmodule ModuleName do
   def hello do
