@@ -67,7 +67,8 @@ iex> 2 = a
 @[3-4](Which also means 1 matches to a and is 1)
 @[5-6](However 2 will not bind to a in this case)
 ---
-## Pattern Matching is fundamental to Elixir
+# Elixir Fundamental
+## Pattern Matching
 ---
 ```elixir
 iex> list = [1, 2, 3]
@@ -218,6 +219,49 @@ print(array)
 ---
 > "GOTO was evil because we asked, 'how did I get to this point of execution?'
 > Mutability leaves us with, 'how did I get to this state?'"
-> - @fa[twitter](jessitron)
+> @fa[twitter](jessitron)
 ---
-
+# Elixir Fundamental
+## Immutability
+---
+## Immutable Data is Known Data
+Once a variable references anything, it will always reference those same values until you rebind the variable.
+---
+## Immutable Data is Known Data
+What happens when you add 100 to each element in a list like [1, 2, 3]?
+---
+## Immutable Data is Known Data
+Elixir produces a copy of the original containing the new values.<br>
+The original remains **unchanged**.
+---
+## Immutable Data is Known Data
+This fits Elixir's idea of programming being about transforming data.<br>
+We transform it into something new. 
+---
+## Concurrency is a lot less frightening!
+---
+## But what about performance?
+- Wouldn't copying all of this data be inefficient?
+- What about Garbage Collection, won't there be a lot of bunch of things using memory on the heap?
+---
+## Immutability Performance - Copying Data
+Consider the following:
+```elixir
+iex> list1 = [3, 2, 1]
+[3, 2, 1]
+iex> list2 = [4 | list1]
+[4, 3, 2, 1]
+```
+@[3](We have a new operator, [head | tail])
+@[1-4](In most languages list2 would be built by making a new list and copying over)
+@[1-4](Elixir knows list1 **will never change** and therefore simply creates a new list with a head of 4 and a tail of list1)
+---
+## Immutability Performance - Garbage Collection
+Most modern languages have a garbage collector that we are usually quite suspicious of (rightly so).
+---
+## Immutability Performance - Garbage Collection
+- When you write Elixir code, you use lots and lots of processes.
+- Each process has its own heap.
+- Data in applicaiton is divvied up between these, so heap is much smaller.
+- As a result, garbage collection is much faster.
+- When a process terminates before its heap becomes full, all data is discarded.
