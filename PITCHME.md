@@ -23,13 +23,23 @@
 @size[0.4em](@fa[github](BlackbeardMatt) @fa[twitter](BlackbeardMatt))
 @snapend
 ---
-> Programming should be about transforming data.
+> "Programming should be about transforming data."
 ---
 ## Elixir is...
 * A functional programming language
 * Highly Scalable
 * Incredibly Fault-Tolerant
 * Built on top of the Erlang VM
+---
+```elixir
+iex> a = 1
+1
+iex> a + 3
+4
+```
+@[01-04](Simple assignment, right?)
+@[01-04](Not quite)
+@[01-01](The = is the *match operator*)
 ---
 ```elixir
 defmodule ModuleName do
