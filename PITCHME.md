@@ -174,6 +174,8 @@ end
 
 def check(_state, _action), do: :error
 ```
+@[1-17](With this, we can whitelist actions...)
+@[18](And default errors when it doesn't match)
 ---
 ```elixir
 defmodule ModuleName do
