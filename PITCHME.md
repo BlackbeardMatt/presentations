@@ -186,6 +186,26 @@ Recursion.print_multiple_times('Hello World', 3)
 ---
 ## Enough about pattern matching!
 ---
+```python
+count = 99
+do_something_with(count)
+print(count)
+```
+We can expect this to print 99 without worry. 99 will be the value 99
+---
+```python
+array = [1, 2, 3]
+do_something_with(array)
+print(array)
+```
+@[1-3](Can we bo as sure here?)
+@[1](We know that array here is generally a reference, not a value)
+@[2](What is this passes array off to other threads)
+@[3](Will this really be [1, 2, 3]?!)
+---
+> "GOTO was evil because we asked, 'how did I get to this point of execution?'"
+> "Mutability leaves us with, 'how did I get to this state?'"
+---
 ```elixir
 defmodule ModuleName do
   def hello do
