@@ -116,6 +116,33 @@ have the same VALUE.
 def check(%Rules{state: :initialized} = rules, :add_player), do:
     {:ok, %Rules{rules | state: :players_set}}
 ```
+@[1-2](Woah now! What is all this?!?)
+@[1-2](Let's back up for a moment)
+@[1](First: **def** is how we define a function)
+@[1](%Rules defines a key value map struct defined in the Rules module)
+---
+```elixir
+defstruct state:   :initialized,
+          player1: :islands_not_set,
+          player2: :islands_not_set
+```
+@[1-3](That struct looked like this)
+@[2](Here the key **player1** is assigned the atom :islands_not_set)
+---
+# Atoms
+Atoms are constants that represent something's name.
+```elxir
+iex> :fred
+:fred
+```
+They are constants that represent themselves.
+---
+# Atoms
+```elixir
+iex> :fred = :fred
+:fred
+```
+Two atoms with the same name will always compare as being equal, even if they were created on two different computers an ocean apart.
 ---
 ```elixir
 defmodule ModuleName do
