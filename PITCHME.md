@@ -177,6 +177,26 @@ def check(_state, _action), do: :error
 @[1-17](With this, we can whitelist actions...)
 @[18](And default errors when it doesn't match)
 ---
+## Helpful in Recursion
+```elixir
+defmodule Recursion do
+    def print_multiple_times(msg, n) when n <= 1 do
+        IO.puts msg
+    end
+
+    def print_multiple_times(msg, n) do
+        IO.puts msg
+        print_multiple_times(msg, n - 1)
+    end
+end
+
+Recursion.print_multiple_times('Hello World', 3)
+```
+@[6-9](Initially this matches, so we'll see 'Hello World' twice)
+@[2-4](But then n is <= 1, when we will see it print out one last time)
+---
+## Enough about pattern matching!
+---
 ```elixir
 defmodule ModuleName do
   def hello do
