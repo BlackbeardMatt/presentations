@@ -44,6 +44,7 @@ end
 @[2, 4](The function is scoped to a do-block, similar to curly brackets in C)
 @[03-03](Output to the world!)
 ---
+# Let's start with assignment
 ```elixir
 iex> a = 1
 1
@@ -107,6 +108,7 @@ iex> [a, 2, b ] = list
 iex> a
 1
 iex> b
+3
 ```
 @[3-4](This matches as a is assigned 1 and b is assigned 3)
 ---
@@ -121,7 +123,7 @@ iex> [a, 1, b] = list
 ## Think like Algebra
 x = a + 1<br>
 Not assigning x, instead <br>
-you are asserting x and a + 1<br>
+you are asserting that x and a + 1<br>
 have the same VALUE.
 ---
 ## Why is this important?
