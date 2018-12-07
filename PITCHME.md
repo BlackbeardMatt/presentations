@@ -41,6 +41,7 @@ end
 ```
 @[01-01](Define the module)
 @[02-04](Define the function)
+@[2, 4](The function is scoped to a do-block, similar to curly brackets in C)
 @[03-03](Output to the world!)
 ---
 ```elixir
@@ -244,7 +245,8 @@ We transform it into something new.
 - Wouldn't copying all of this data be inefficient?
 - What about Garbage Collection, won't there be a lot of bunch of things using memory on the heap?
 ---
-## Immutability Performance - Copying Data
+## Immutability Performance
+## Copying Data
 Consider the following:
 ```elixir
 iex> list1 = [3, 2, 1]
@@ -256,12 +258,89 @@ iex> list2 = [4 | list1]
 @[1-4](In most languages list2 would be built by making a new list and copying over)
 @[1-4](Elixir knows list1 **will never change** and therefore simply creates a new list with a head of 4 and a tail of list1)
 ---
-## Immutability Performance - Garbage Collection
+## Immutability Performance
+## Garbage Collection
 Most modern languages have a garbage collector that we are usually quite suspicious of (rightly so).
 ---
-## Immutability Performance - Garbage Collection
+## Immutability Performance
+## Garbage Collection
 - When you write Elixir code, you use lots and lots of processes.
 - Each process has its own heap.
 - Data in applicaiton is divvied up between these, so heap is much smaller.
 - As a result, garbage collection is much faster.
 - When a process terminates before its heap becomes full, all data is discarded.
+---
+# Elixir Syntactical Sugar
+## For all you developers out there
+---
+## List Sugar
+```elixir
+iex> [ 1, 2, 3 ] ++ [ 4, 5, 6 ] # concatenation
+[1, 2, 3, 4, 5, 6]
+iex> [1, 2, 3, 4] -- [2, 4]     # difference
+[1, 3]
+iex> 1 in [1, 2, 3, 4]          # membership
+true
+iex> "cheese" in [1, 2, 3, 4]
+false
+```
+---
+## Truth
+- true
+- false
+- nil
+
+Each is actually an alias for an atom of the same name.<br>
+Any value other than false or nil is treated as *truthy*
+---
+## Boolean Operator Sugar
+```elixir
+a or b    # true if a is true; otherwise b
+a and b   # false if a is false; otherwise b
+not a     # false if a is true; true otherwise
+```
+Elixir also does have || && and ! just like most other languages
+---
+## Anonymous Functions
+### Return of the Pattern Matching
+```elixir
+iex> handle_open = fn
+...>    {:ok, file} -> "Read data: #{IO.read(file, :line)}"
+...>    {_,  error} -> "Error: #{:file.format_error(error)}"
+...> end
+iex> handle_open.(File.open("code/intro/hello.exs"))
+"Read data: IO.puts \"Hello, World!\"\n"
+iex> handle_open.(File.open("nonexistant"))
+"Error: no such file or directory"
+```
+@[1-4](Here we define the function and define two function bodies)
+@[1-4](Each has a single tuple as a parameter)
+@[2](This function takes an okay and the file)
+@[3](This matches any other value for the first term)
+@[1-6](And we have an :ok output)
+@[1-8](And a failed output)
+---
+## We already saw pattern matching with functions earlier
+## But what if we need to check the types of the argument?
+---
+## Function Guards
+```elixir
+defmodule Guard do
+    def what_is(x) when is_number(x) do
+        IO.puts "#{x} is a number"
+    end
+    def what_is(x) when is_list(x) do
+        IO.puts "#{inspect(x)} is a list"
+    end
+    def what_is(x) when is_atom(x) do
+        IO.puts "#{x} is an atom"
+    end
+end
+```
+@[2-4](Here, when is_number enforces that the argument is a number)
+@[2-4](Guard.what_is(99) # => 99 is a number)
+@[5-7](And is a list)
+@[5-7](Guard.what_is([1,2,3]) # => [1,2,3] is a list)
+@[8-10](And is an atom)
+@[8-10](Guard.what_is(:thisbird) # => thisbird is an atom)
+---
