@@ -388,4 +388,178 @@ filing = DB.find_customers
 @[1](Which is then assigned to filing)
 @[1-4](So much more readable!)
 ---
-
+# Elixir Fundamental
+## Collections
+### Enums and Streams
+---
+## Enums
+Most used of all Elixir libraries
+- iterate
+- filter
+- combine
+- split
+- and otherwise manipulate
+Similar to array libraries we know and love
+---
+## Enums
+Convert any collection into a list
+```elixir
+iex> list = Enum.to_list 1..5
+[1, 2, 3, 4, 5]
+```
+---
+## Enums
+Concatenate Collections
+```elixir
+iex> Enum.concat([1,2,3], [4,5,6])
+[1, 2, 3, 4, 5, 6]
+iex> Enum.concat [1,2,3], 'abc'
+[1, 2, 3, 97, 98, 99]
+```
+---
+## Enums
+Create collections whose elements are some function of the original:
+```elixir
+iex> list = Enum.to_list 1..5
+iex> Enum.map(list, &(&1 * 10))
+[10, 20, 30, 40, 50]
+iex> Enum.map(list, &String.duplicate("*", &1))
+["*", "**", "***", "****", "*****"]
+```
+---
+## Enums
+Merge Collections
+```elixir
+iex> Enum.zip(list, [:a, :b, :c])
+[{1, :a}, {2, :b}, {3, :c}]
+iex> Enum.with_index(["once", "upon", "a", "time"])
+[{"once", 0}, {"upon", 1}, {"a", 2}, {"time", 3}]
+```
+---
+## Enums
+Fold elements into a single value
+```elixir
+iex> Enum.reduce(1..100, &(&1+&2))
+5050
+iex> Enum.reduce(["now", "is", "the", "time"],fn word, longest ->
+...>    if String.length(word) > String.length(longest) do
+...>        word
+...>    else
+...>        longest
+...>    end
+...> end)
+"time"
+```
+---
+## Enums
+Deal a hand of cards:
+```elixir
+iex> import Enum
+iex> deck = for rank <- '23456789TJQKA', suit <- 'CDHS', do: [suit,rank]
+['C2', 'D2', 'H2', 'S2', 'C3', 'D3', ... ]
+iex> deck |> shuffle |> take(13)
+['DQ', 'S6', 'HJ', 'H4', 'C7', 'D6', 'SJ', 'S9', 'D7', 'HA', 'S4', 'C2', 'CT']
+iex> hands = deck |> shuffle |> chunk(13)
+[['D8', 'CQ', 'H2', 'H3', 'HK', 'H9', 'DK', 'S9', 'CT', 'ST', 'SK', 'D2', 'HA'],
+['C5', 'S3', 'CK', 'HQ', 'D3', 'D4', 'CA', 'C8', 'S6', 'DQ', 'H5', 'S2', 'C4'],
+['C7', 'C6', 'C2', 'D6', 'D7', 'SA', 'SQ', 'H8', 'DT', 'C3', 'H7', 'DA', 'HT'],
+['S5', 'S4', 'C9', 'S8', 'D5', 'H4', 'S7', 'SJ', 'HJ', 'D9', 'DJ', 'CJ', 'H6']]
+```
+---
+## Enums are great and all...
+- The enum module is greedy
+- Potentially consumes all of a collections contents
+- Sometimes we only need values as we need them
+---
+## Streams to the rescue
+- Composable Enumerator
+- Processes elements in a collection only as we need them
+- Removes need to store intermediate results as full collecitons
+---
+## Streams
+Easy to make
+```elixir
+iex> s = Stream.map [1, 3, 5, 7], &(&1 + 1)
+#Stream<[enum: [1, 3, 5, 7], funs: [#Function<46.3851/1 in Stream.map/2>] ]>
+```
+@[1-2](We got a stream back, but how do we get results?)
+---
+## Streams
+Enumerate to get values
+```elixir
+iex> s = Stream.map [1, 3, 5, 7], &(&1 + 1)
+#Stream<[enum: [1, 3, 5, 7], funs: [#Function<46.3851/1 in Stream.map/2>] ]>
+iex> Enum.to_list s
+[2, 4, 6, 8]
+```
+@[3-4](If we just enumerate the string, isn't that one extra layer?)
+---
+## Streams
+Because streams are enumerable, that's where the value lies
+```elixir
+iex> squares = Stream.map [1, 2, 3, 4], &(&1*&1)
+#Stream<[enum: [1, 2, 3, 4],
+    funs: [#Function<32.133702391 in Stream.map/2>] ]>
+iex> plus_ones = Stream.map squares, &(&1+1)
+#Stream<[enum: [1, 2, 3, 4],
+    funs: [#Function<32.133702391 in Stream.map/2>,
+        #Function<32.133702391 in Stream.map/2>] ]>
+iex> odds = Stream.filter plus_ones, fn x -> rem(x,2) == 1 end
+#Stream<[enum: [1, 2, 3, 4],
+    funs: [#Function<26.133702391 in Stream.filter/2>,
+        #Function<32.133702391 in Stream.map/2>,
+        #Function<32.133702391 in Stream.map/2>] ]>
+iex> Enum.to_list odds
+[5, 17]
+```
+@[1-3](First we create a stream and square each value)
+@[4-6](Then each of those values gets plus one)
+@[7-11](Then we filter the stream to only get the odd numbers)
+@[12-13](And finally output the odd numbers)
+---
+## Streams
+But doesn't this create multiple copies of the collections with the changes?
+---
+## Streams
+No it does not!<br>
+Each value is passed through each stream independently until enumerated into a list
+---
+## Streams
+What we did before is equivalent to:
+```elixir
+[1,2,3,4]
+|> Stream.map(&(&1*&1))
+|> Stream.map(&(&1+1))
+|> Stream.filter(fn x -> rem(x,2) == 1 end)
+|> Enum.to_list
+```
+Which we know pipes the values down.
+---
+## Streams
+While enums were greedy<br>
+streams are lazy
+---
+## Streams
+```elixir
+iex> Enum.map(1..10_000_000, &(&1+1)) |> Enum.take(5)
+[2, 3, 4, 5, 6]
+```
+This takes about 8-10 seconds to run<br>
+Elixir will create 10 million elements, then grab 5
+---
+## Streams
+```elixir
+iex> Stream.map(1..10_000_000, &(&1+1)) |> Enum.take(5)
+[2, 3, 4, 5, 6]
+```
+This is instantaneous. The take call only needs 5 values. Once it has them, no more processing.
+---
+## Streams
+Not all Elixir libraries have streams, but they are easy to implement.
+---
+# That's a lot of cool stuff
+---
+# But how about a demo of an Elixir project?!
+---
+# DEMO
+---
