@@ -301,6 +301,13 @@ not a     # false if a is true; true otherwise
 ```
 Elixir also does have || && and ! just like most other languages
 ---
+# Elixir Fundamental
+## Functions
+---
+## Functions are first class citizens
+---
+## We already saw some regular functions, but what about...
+--- 
 ## Anonymous Functions
 ### Return of the Pattern Matching
 ```elixir
@@ -344,3 +351,39 @@ end
 @[8-10](And is an atom)
 @[8-10](Guard.what_is(:thisbird) # => thisbird is an atom)
 ---
+## Pipe Operator
+### The Amazing...
+---
+# |>
+---
+We've all seen code like this:
+```python
+people = DB.find_customers
+orders = Orders.for_customers(people)
+tax    = sales_tax(orders, 2018)
+filing = prepare_filing(tax)
+```
+---
+Which is easier to read than:
+```python
+filing = prepare_filing(sales_tax(Orders.for_customers(DB.find_customers),2018))
+```
+---
+Which is not as good as:
+```elixir
+filing = DB.find_customers
+           |> Orders.for_customers
+           |> sales_tax(2018)
+           |> prepare_filing
+```
+@[1-4](How does this glorious magic work?!)
+@[1-2](The pipe operator |> takes...)
+@[1](The returned value from DB.find_customers)
+@[2](and uses it as the first argument in Orders.for_customers)
+@[2-3](We then take the response and pass it to sales_tax)
+@[2-3](which is then the same as sales_tax(orders, 2018))
+@[3-4](And finally the returned value is passed to prepare_filing)
+@[1](Which is then assigned to filing)
+@[1-4](So much more readable!)
+---
+
