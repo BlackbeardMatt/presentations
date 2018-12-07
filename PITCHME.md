@@ -566,10 +566,10 @@ Not all Elixir libraries have streams, but they are easy to implement.
 @snap[north]
 # Go Forth!
 @snapend
-@snap[east]
+@snap[east books]
 ![elixir16](assets/img/elixir16.PNG)
 @snapend
-@snap[west]
+@snap[west books]
 ![functwebdev](assets/img/functwebdev.jpg)
 @snapend
 ---
