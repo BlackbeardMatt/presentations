@@ -563,3 +563,17 @@ Not all Elixir libraries have streams, but they are easy to implement.
 ---
 # DEMO
 ---
+@snap[north]
+# Go Forth!
+@snapend
+@snap[east]
+![elixir16](assets/img/elixir16.PNG)
+@snapend
+@snap[west]
+![functwebdev](assets/img/functwebdev.jpg)
+@snapend
+---
+# Questions?
+---
+# Thank you!
+---
