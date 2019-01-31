@@ -26,3 +26,14 @@
     color: white;
     font-weight: bold;
 }
+
+.aboutme {
+    border: none !important;
+    box-shadow: none !important;
+    -webkit-clip-path: circle(40% at 50% 50%);
+    clip-path: circle(40% at 50% 50%);
+}
+
+.books {
+    height: 60%;
+}
