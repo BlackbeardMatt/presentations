@@ -1,11 +1,11 @@
-# Getting started with Elixir
+# Getting started with Angular State Management
 #
 
 #
 # Theme Setting
 # Doc: https://gitpitch.com/docs/settings/theme
 #
-theme : sky
+theme : white
 
 #
 # Theme-Override Setting
@@ -44,6 +44,6 @@ code-line-numbers : true
 # Twitter Card Settings [Pro Only]
 # Doc: https://gitpitch.com/docs/settings/twitter-card
 #
-title : "GitPitch In 60 Seconds"
-description : "A short tutorial introducing the power and simplicity of GitPitch, the markdown presentation service on Git."
+title : "Angular State Management"
+description : "Reducing state management headaches with observable stores"
 thumbnail : https://gitpitch.com/gpimg/tutorial-thumb.png
