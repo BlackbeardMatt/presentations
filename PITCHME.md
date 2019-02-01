@@ -10,10 +10,12 @@
 ---
 @title[About Me]
 
-@snap[west aboutmetext]
+@snap[west]
+<div class="aboutmetext">
 ### MSOE 2018 SE Graduate
 ### Software Engineer
 ### Centarian
+</div>
 @snapend
 
 @snap[north]
