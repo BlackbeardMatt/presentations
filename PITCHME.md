@@ -154,7 +154,7 @@ RXJS Observable Services
 ## Flux Pattern
 @snapend
 
-@snap[midpoint]
+@snap[midpoint fluxpic]
 ![FLUX](assets/img/flux.png)
 @snapend
 ---
