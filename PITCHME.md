@@ -11,9 +11,9 @@
 @title[About Me]
 
 @snap[west]
-- MSOE 2018 SE Graduate
-- Software Engineer
-- Centarian
+* MSOE 2018 SE Graduate
+* Software Engineer
+* Centarian
 @snapend
 
 @snap[north]
@@ -34,3 +34,23 @@
     - NGRX (ngrx.io)
 @ulend
 ---
+## Smart vs. Dumb Components
+@snap[west]
+Smart Components
+@ul
+- AKA Containers
+- Stateful
+- Connected to Services
+- Receives Data via Resolvers
+- Contains Most Business Logic
+@ulend
+@snapend
+
+@snap[east]
+Dumb Components
+@ul
+- AKA Presentational
+- Stateless
+- Similar to a Pure Function
+- Receives data via @Input Bindings
+- Contains almost no Business Logic
