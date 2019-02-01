@@ -36,7 +36,10 @@
     - NGRX (ngrx.io)
 @ulend
 ---
+@snap[north]
 ## Smart vs. Dumb Components
+@snapend
+
 @snap[west]
 Smart Components
 @ul
@@ -56,3 +59,4 @@ Dumb Components
 - Similar to a Pure Function
 - Receives data via @Input Bindings
 - Contains almost no Business Logic
+@snapend
