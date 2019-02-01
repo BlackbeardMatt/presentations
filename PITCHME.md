@@ -158,3 +158,68 @@ RXJS Observable Services
 ![FLUX](assets/img/flux.png)
 @snapend
 ---
+## But we don't have Redux in Angular!
+---
+## NGXS (or NGRX) to the rescue
+---
+@snap[north-west]
+NGXS Store
+@snapend
+
+@snap[midpoint fluxpic]
+![NGXS](assets/img/ngxs.png)
+@snapend
+---
+@snap[north-west]
+NGXS Store
+@snapend
+
+@ul
+- Built on 4 main pieces
+  - Central Store
+  - Actions
+  - State
+  - Selectors
+@ulend
+---
+@snap[north-west]
+NGXS Store
+@snapend
+
+## NGXS Demo
+---
+@snap[north-west]
+NGXS Store
+@snapend
+
+@snap[midpoint]
+## But What Problems Do We See?
+@snapend
+---
+@snap[north-west]
+NGXS Store
+@snapend
+
+@ul
+- Lots of boilerplace code
+- Overengineering for small projects
+@ulend
+---
+@snap[north-west]
+NGXS Store
+@snapend
+
+## Use For
+@ul
+- Medium to Enterprise Projects
+- When race conditions are a concern
+- When state is complex and dependent on several possible sources of actions
+@ulend
+---
+## Any Questions?
+---
+## Thank you!
+
+@snap[south]
+@size[0.4em](@fa[github](BlackbeardMatt)     @fa[twitter](BlackbeardMatt))
+@snapend
