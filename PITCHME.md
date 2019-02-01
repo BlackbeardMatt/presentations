@@ -40,8 +40,7 @@
 ### Smart vs. Dumb Components
 @snapend
 
-@snap[west]
-Smart Components
+## Smart Components
 @ul
 - AKA Containers
 - Stateful
@@ -49,14 +48,12 @@ Smart Components
 - Receives Data via Resolvers
 - Contains Most Business Logic
 @ulend
-@snapend
 ---
 @snap[north-west]
 ### Smart vs. Dumb Components
 @snapend
 
-@snap[west]
-Dumb Components
+## Dumb Components
 @ul
 - AKA Presentational
 - Stateless
@@ -64,4 +61,3 @@ Dumb Components
 - Receives data via @Input Bindings
 - Contains almost no Business Logic
 @ulend
-@snapend
