@@ -64,3 +64,45 @@ Smart vs. Dumb Components
 ---
 ## Smart Vs. Dumb Demo
 ---
+@snap[midpoint]
+## What Problems Do We See
+@snapend
+---
+## Component Interaction State Management
+@ul
+- Up and down Dom
+- Can not pass through containers
+  - Have to implement every event emission upwards
+- Changes in one place will be hard to manage elsewhere
+@ulend
+---
+## Component Interaction State Mangement
+### Use For
+@ul
+- Small Projects
+- Managing when dom elements rerender
+- Read only
+@ulend
+---
+## RXJS To The Rescue!
+---
+## RXJS Observable Services
+@ul
+- BehaviorSubjects<T> hold state
+- Exposed by Singleton Services
+  - As Observables
+- Built Into Angular
+@ulend
+---
+## RXJS Demo
+---
+@snap[midpoint]
+## What Problems Do We See
+@snapend
+---
+## RXJS State Management
+@ul
+- Have to implement for each state slice
+- Could see race conditions
+- Not ideal if receiving push notifcations from server
+@ulend
