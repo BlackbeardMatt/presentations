@@ -59,4 +59,5 @@ Dumb Components
 - Similar to a Pure Function
 - Receives data via @Input Bindings
 - Contains almost no Business Logic
+@ulend
 @snapend
