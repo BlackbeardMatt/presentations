@@ -40,4 +40,12 @@ export class SmartComponent implements OnInit {
       console.log(this.corporateNonsense);
     });
   }
+
+  removeNonsense(nonsense: Phrase) {
+    console.log('nonsense to remove', nonsense);
+    const index = this.corporateNonsense.findIndex((element: Phrase) => {
+      return element.phrase === nonsense.phrase;
+    });
+    this.corporateNonsense.splice(index, 1);
+  }
 }

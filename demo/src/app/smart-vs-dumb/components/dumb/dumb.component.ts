@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Phrase } from 'src/app/models/phrase.model';
 
 @Component({
@@ -9,4 +9,11 @@ import { Phrase } from 'src/app/models/phrase.model';
 export class DumbComponent {
   @Input()
   nonsense: Phrase;
+
+  @Output()
+  removeNonsense = new EventEmitter<Phrase>();
+
+  remove() {
+    this.removeNonsense.emit(this.nonsense);
+  }
 }

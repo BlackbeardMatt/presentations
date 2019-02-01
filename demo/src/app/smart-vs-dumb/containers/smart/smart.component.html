@@ -26,5 +26,5 @@
   </mat-card-actions>
 </mat-card>
 <div class="nonsense-container" *ngFor="let nonsense of corporateNonsense" [@simpleFadeAnimation]="'in'">
-  <app-dumb [nonsense]="nonsense"></app-dumb>
+  <app-dumb [nonsense]="nonsense" (removeNonsense)="removeNonsense($event)"></app-dumb>
 </div>
