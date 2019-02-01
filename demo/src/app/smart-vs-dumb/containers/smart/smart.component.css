@@ -2,3 +2,7 @@
   background-image: url(../../../../assets/me.jpg);
   background-size: cover;
 }
+
+.nonsense-container {
+    margin-top: .5em;
+}

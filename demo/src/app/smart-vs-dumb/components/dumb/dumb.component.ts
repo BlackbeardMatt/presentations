@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Phrase } from 'src/app/models/phrase.model';
 
 @Component({
   selector: 'app-dumb',
   templateUrl: './dumb.component.html',
   styleUrls: ['./dumb.component.css']
 })
-export class DumbComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class DumbComponent {
+  @Input()
+  nonsense: Phrase;
 }
