@@ -40,7 +40,7 @@
 ### Smart vs. Dumb Components
 @snapend
 
-@snap[west component-list]
+@snap[west]
 Smart Components
 @ul
 - AKA Containers
@@ -50,8 +50,12 @@ Smart Components
 - Contains Most Business Logic
 @ulend
 @snapend
+---
+@snap[north-west]
+### Smart vs. Dumb Components
+@snapend
 
-@snap[east component-list]
+@snap[west]
 Dumb Components
 @ul
 - AKA Presentational
