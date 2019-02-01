@@ -18,7 +18,7 @@ theme-override: assets/css/PITCHME.css
 # https://gitpitch.com/docs/settings/logo
 #
 logo : assets/img/angular.png
-logo-postion : top-left
+logo-postion : top-right
 
 #
 # Layout Setting

@@ -1,0 +1,17 @@
+.nonsense-container {
+  margin-top: .5em;
+}
+
+.nonsense {
+  width: 45%;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.stats-container {
+  width: 45%;
+}

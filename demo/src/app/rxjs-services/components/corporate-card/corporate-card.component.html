@@ -1,0 +1,30 @@
+<mat-card>
+  <mat-card-header>
+    <div mat-card-avatar class="awesome-picture-of-owner"></div>
+    <mat-card-title>
+      Corporate Sales Nonsense
+    </mat-card-title>
+    <mat-card-subtitle>
+      Where Your Copyright Is Written For You
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p>
+      Just click the button to get the copyright that you need to succeed at your next sales pitch.
+      We know that with the right fluff, you'll get millions of dollars in funding in no time!
+    </p>
+    <p>
+      <b>Each Corporate Sales Piece is only $3.00!!</b>
+    </p>
+    <p>
+      <i>Each purchase is billed directly to your credit card. No refunds accepted.</i>
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="accent" (click)="getNonsense.emit(true)">Get Corporate Nonsense</button>
+  </mat-card-actions>
+</mat-card>
+<!-- <div class="nonsense-container" *ngFor="let nonsense of corporateNonsense" [@simpleFadeAnimation]="'in'">
+  <app-dumb [nonsense]="nonsense" (removeNonsense)="removeNonsense($event)"></app-dumb>
+</div> -->

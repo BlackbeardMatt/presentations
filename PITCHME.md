@@ -61,3 +61,6 @@ Smart vs. Dumb Components
 - Receives data via @Input Bindings
 - Contains almost no Business Logic
 @ulend
+---
+## Smart Vs. Dumb Demo
+---

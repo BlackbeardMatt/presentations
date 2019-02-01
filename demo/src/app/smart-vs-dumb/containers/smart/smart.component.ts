@@ -42,7 +42,6 @@ export class SmartComponent implements OnInit {
   }
 
   removeNonsense(nonsense: Phrase) {
-    console.log('nonsense to remove', nonsense);
     const index = this.corporateNonsense.findIndex((element: Phrase) => {
       return element.phrase === nonsense.phrase;
     });
