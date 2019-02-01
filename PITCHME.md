@@ -149,3 +149,12 @@ RXJS Observable Services
 @snap[midpoint]
 ![FACEBOOK MESSENGER](assets/img/unread.jpg)
 @snapend
+---
+@snap[north]
+## Flux Pattern
+@snapend
+
+@snap[midpoint]
+![FLUX](assets/img/flux)
+@snapend
+---
