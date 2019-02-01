@@ -36,8 +36,8 @@
     - NGRX (ngrx.io)
 @ulend
 ---
-@snap[north]
-## Smart vs. Dumb Components
+@snap[north-west]
+### Smart vs. Dumb Components
 @snapend
 
 @snap[west]
