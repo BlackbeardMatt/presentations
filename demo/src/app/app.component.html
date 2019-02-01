@@ -1,0 +1,9 @@
+<mat-toolbar color="primary">
+  <a mat-raised-button color="primary" [routerLink]="['/']" routerLinkActive="active">Home</a>
+  <a mat-raised-button color="primary" [routerLink]="['/smartvsdumb/demo']" routerLinkActive="active">Smart Vs. Dumb</a>
+  <a mat-raised-button color="primary" [routerLink]="['/rxjs/demo']" routerLinkActive="active">RXJS Services</a>
+  <a mat-raised-button color="primary" [routerLink]="['/ngxs/demo']" routerLinkActive="active">NGXS Store</a>
+</mat-toolbar>
+<div class="content-container">
+  <router-outlet></router-outlet>
+</div>

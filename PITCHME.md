@@ -37,7 +37,7 @@
 @ulend
 ---
 @snap[north-west]
-### Smart vs. Dumb Components
+Smart vs. Dumb Components
 @snapend
 
 ## Smart Components
@@ -50,7 +50,7 @@
 @ulend
 ---
 @snap[north-west]
-### Smart vs. Dumb Components
+Smart vs. Dumb Components
 @snapend
 
 ## Dumb Components
