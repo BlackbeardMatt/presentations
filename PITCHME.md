@@ -155,6 +155,6 @@ RXJS Observable Services
 @snapend
 
 @snap[midpoint]
-![FLUX](assets/img/flux)
+![FLUX](assets/img/flux.png)
 @snapend
 ---
