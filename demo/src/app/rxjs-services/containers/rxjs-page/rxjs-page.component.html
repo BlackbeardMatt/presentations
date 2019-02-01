@@ -1,12 +1,4 @@
 <app-corporate-card (getNonsense)="getNewNonsense($event)"></app-corporate-card>
-<div class="content-container">
-  <div class="nonsense">
-    <div class="nonsense-container" *ngFor="let nonsense of (nonsense$ | async)">
-      <app-nonsense-card [nonsense]="nonsense" (removeNonsense)="deleteNonsense($event)"></app-nonsense-card>
-    </div>
-  </div>
-
-  <div class="stats-container">
-    <h2>A test is here</h2>
-  </div>
+<div class="nonsense-container" *ngFor="let nonsense of (nonsense$ | async)" [@simpleFadeAnimation]="'in'">
+  <app-nonsense-card [nonsense]="nonsense" (removeNonsense)="deleteNonsense($event)"></app-nonsense-card>
 </div>

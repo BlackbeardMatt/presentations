@@ -1,0 +1,15 @@
+<mat-card>
+  <mat-card-title>
+    The Best Deal Ever
+  </mat-card-title>
+  <mat-card-content>
+    <p>
+      Get 5 Corporate Sales Copy for only $24.99!! This is the lowest our prices have ever gone. This is a limited time
+      offer ONLY FOR YOU.
+    </p>
+    <h3>You only have {{count}} Seconds Remaining to claim this deal!</h3>
+  </mat-card-content>
+  <mat-card-actions>
+<button mat-raised-button color="accent" (click)="superDeal.emit(true)">Get Super Deal</button>
+  </mat-card-actions>
+</mat-card>

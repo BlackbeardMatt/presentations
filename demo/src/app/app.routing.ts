@@ -17,7 +17,7 @@ const routes = [
   },
   {
     path: 'ngxs',
-    loadChildren: './ngxs-store/ngxs-store.module#NgxsStoreModule'
+    loadChildren: './ngxs-store/ngxs-store-demo.module#NgxsStoreDemoModule'
   }
 ];
 

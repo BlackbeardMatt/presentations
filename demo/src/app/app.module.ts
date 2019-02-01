@@ -8,6 +8,9 @@ import { LandingComponent } from './landing/landing.component';
 import { MaterialModule } from './material.module';
 import { CorporateNonsenseChatService } from './services/corporate-nonsense-chat.service';
 import { CorporateNonsenseService } from './services/corporate-nonsense.service';
+import { NgxsModule } from '@ngxs/store';
+import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
+import { NgxsRouterPluginModule } from '@ngxs/router-plugin';
 
 
 @NgModule({
@@ -20,7 +23,10 @@ import { CorporateNonsenseService } from './services/corporate-nonsense.service'
     HttpClientModule,
     BrowserAnimationsModule,
     MaterialModule,
-    RoutingModule
+    RoutingModule,
+    NgxsModule.forRoot([], { developmentMode: true }),
+    NgxsLoggerPluginModule.forRoot(),
+    NgxsRouterPluginModule.forRoot(),
   ],
   providers: [CorporateNonsenseService, CorporateNonsenseChatService],
   bootstrap: [AppComponent]

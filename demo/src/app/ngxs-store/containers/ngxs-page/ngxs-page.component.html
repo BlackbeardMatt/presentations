@@ -1,3 +1,9 @@
-<p>
-  ngxs-page works!
-</p>
+<app-corporate-card (getNonsense)="getNewNonsense($event)"></app-corporate-card>
+<div class="superdeal-container">
+  <app-super-deal (superDeal)=superDeal($event)></app-super-deal>
+</div>
+<div class="nonsense-flex">
+  <div class="nonsense-container" *ngFor="let item of (nonsense$ | async)" [@simpleFadeAnimation]="'in'">
+    <app-nonsense-card class="nonsense-card" [nonsense]="item" (removeNonsense)="deleteNonsense($event)"></app-nonsense-card>
+  </div>
+</div>

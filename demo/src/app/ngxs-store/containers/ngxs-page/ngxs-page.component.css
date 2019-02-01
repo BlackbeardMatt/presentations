@@ -1,0 +1,15 @@
+.superdeal-container {
+  margin-top: .5em;
+}
+
+.nonsense-flex {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.nonsense-container {
+  margin-top: .5em;
+  max-width: 48%;
+  margin-right: .5em;
+}

@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import * as io from 'socket.io-client';
 import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Phrase } from '../models/phrase.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +11,7 @@ export class CorporateNonsenseChatService {
   private url = 'http://localhost:3000';
   private socket;
 
-  constructor() {
+  constructor(private http: HttpClient) {
     this.socket = io(this.url);
   }
 
@@ -25,6 +27,10 @@ export class CorporateNonsenseChatService {
     this.socket.emit('start-nonsense');
   }
 
+  public endNonsense() {
+    this.socket.emit('end-nonsense');
+  }
+
   public getCorporateNonsenseStream = () => {
     return Observable.create((observer) => {
       this.socket.on('new-nonsense', (nonsense) => {
@@ -32,5 +38,9 @@ export class CorporateNonsenseChatService {
         observer.next(nonsense);
       });
     });
+  }
+
+  public getSingleNonsense() {
+    return this.http.get<Phrase>(this.url);
   }
 }

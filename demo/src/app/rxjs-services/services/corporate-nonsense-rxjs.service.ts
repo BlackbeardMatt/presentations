@@ -21,7 +21,10 @@ export class CorporateNonsenseRxjsService {
     const index = this.nonsense.findIndex((element: Phrase) => {
       return element.phrase === corporateNonsense.phrase;
     });
-    this.nonsense.splice(index, 1);
+    if (index > -1) {
+      this.nonsense.splice(index, 1);
+    }
+
     this.nonsense$.next(this.nonsense);
   }
 
