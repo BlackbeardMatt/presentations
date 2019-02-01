@@ -15,7 +15,7 @@
 - MSOE 2018 SE Graduate
 - Software Engineer
 - Centarian
-@endul
+@ulend
 @snapend
 
 @snap[north]
