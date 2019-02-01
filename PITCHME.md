@@ -11,11 +11,9 @@
 @title[About Me]
 
 @snap[west]
-@ul(false)
 - MSOE 2018 SE Graduate
 - Software Engineer
 - Centarian
-@ulend
 @snapend
 
 @snap[north]
