@@ -37,7 +37,7 @@
 @ulend
 ---
 @snap[north-west]
-Smart vs. Dumb Components
+Component Interaction State Management
 @snapend
 
 ## Smart Components
@@ -50,7 +50,7 @@ Smart vs. Dumb Components
 @ulend
 ---
 @snap[north-west]
-Smart vs. Dumb Components
+Component Interaction State Management
 @snapend
 
 ## Dumb Components
@@ -64,11 +64,18 @@ Smart vs. Dumb Components
 ---
 ## Smart Vs. Dumb Demo
 ---
+@snap[north-west]
+Smart vs. Dumb Components
+@snapend
+
 @snap[midpoint]
 ## What Problems Do We See
 @snapend
 ---
-## Component Interaction State Management
+@snap[north-west]
+Component Interaction State Management
+@snapend
+
 @ul
 - Up and down Dom
 - Can not pass through containers
@@ -76,7 +83,10 @@ Smart vs. Dumb Components
 - Changes in one place will be hard to manage elsewhere
 @ulend
 ---
-## Component Interaction State Mangement
+@snap[north-west]
+Component Interaction State Management
+@snapend
+
 ### Use For
 @ul
 - Small Projects
@@ -86,7 +96,10 @@ Smart vs. Dumb Components
 ---
 ## RXJS To The Rescue!
 ---
-## RXJS Observable Services
+@snap[north-west]
+RXJS Observable Services
+@snapend
+
 @ul
 - BehaviorSubjects<T> hold state
 - Exposed by Singleton Services
@@ -94,15 +107,45 @@ Smart vs. Dumb Components
 - Built Into Angular
 @ulend
 ---
+@snap[north-west]
+RXJS Observable Services
+@snapend
+
 ## RXJS Demo
 ---
+@snap[north-west]
+RXJS Observable Services
+@snapend
+
 @snap[midpoint]
 ## What Problems Do We See
 @snapend
 ---
-## RXJS State Management
+@snap[north-west]
+RXJS Observable Services
+@snapend
+
 @ul
-- Have to implement for each state slice
 - Could see race conditions
 - Not ideal if receiving push notifcations from server
+- Managing services between modules is painful
 @ulend
+---
+@snap[north-west]
+RXJS Observable Services
+@snapend
+
+## Use For
+@ul
+- Sharing information between smart components (containers)
+- Generally good for all sized projects
+- Race conditions are not a concern
+@ulend
+---
+@snap[midpoint]
+## But what if we do have possible race conditions?
+@snapend
+---
+@snap[midpoint]
+![FACEBOOK MESSENGER](assets/img/unread.jpg)
+@snapend
