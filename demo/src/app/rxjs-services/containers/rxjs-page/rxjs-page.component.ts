@@ -34,9 +34,6 @@ export class RxjsPageComponent implements OnInit {
 
   ngOnInit() {
     this.nonsense$ = this.nonsenseService.getNonsenseState();
-    this.nonsense$.subscribe(nonsensicle => {
-      console.log(nonsensicle);
-    });
   }
 
   getNewNonsense(toGetOrNotToGet: boolean) {

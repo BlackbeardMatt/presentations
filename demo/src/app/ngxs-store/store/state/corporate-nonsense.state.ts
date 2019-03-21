@@ -28,9 +28,7 @@ export const corporateNonsenseStateModelDefault = {
 export class CorporateNonsenseState {
   nonsenseStream$: Observable<any>;
 
-  constructor(private nonsenseService: CorporateNonsenseChatService) {
-    console.log('Corporate Nonsense State Created');
-  }
+  constructor(private nonsenseService: CorporateNonsenseChatService) { }
 
   @Selector()
   static getNonsense(state: CorporateNonsenseStateModel) {
@@ -60,7 +58,6 @@ export class CorporateNonsenseState {
     if (!state.nonsenseStarted) {
       dispatch(new StartCorporateNonsenseStream);
     }
-    console.log(`getting ${payload} nonsense`);
     this.nonsenseService.getMultipleNonsense(payload);
   }
 
@@ -102,7 +99,6 @@ export class CorporateNonsenseState {
   startCorporateNonsenseStream({ getState, patchState, dispatch }: StateContext<CorporateNonsenseStateModel>) {
     this.nonsenseStream$ = this.nonsenseService.getCorporateNonsenseStream();
     this.nonsenseStream$.subscribe((nonsense: string) => {
-      // console.log('we have nonsense', nonsense);
       dispatch(new AddNonsense(nonsense));
     });
     patchState({

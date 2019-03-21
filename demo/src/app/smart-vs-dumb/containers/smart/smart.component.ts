@@ -32,7 +32,6 @@ export class SmartComponent implements OnInit {
   getNonsense() {
     this.nonsenseService.getCorporateNonsense().subscribe((nonsense: Phrase) => {
       this.corporateNonsense.push(nonsense);
-      console.log(this.corporateNonsense);
     });
   }
 

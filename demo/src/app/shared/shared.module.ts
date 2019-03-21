@@ -16,6 +16,6 @@ const providers = [
     imports: [CommonModule],
     declarations: declarations,
     providers: providers,
-    exports: [ ...providers, ...declarations ]
+    exports: [ ...declarations ]
 }))
 export class SharedModule { }
