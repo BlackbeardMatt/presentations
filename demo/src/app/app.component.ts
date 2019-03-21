@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CorporateNonsenseChatService } from './services/corporate-nonsense-chat.service';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +8,5 @@ import { CorporateNonsenseChatService } from './services/corporate-nonsense-chat
 export class AppComponent {
   title = 'demo';
 
-  constructor() {
-    // chatService.getCorporateNonsense();
-    // chatService.getCorporateNonsenseStream().subscribe((nonsense) => {
-    //   console.log('New nonsense: ', nonsense);
-    // });
-  }
+  constructor() { }
 }

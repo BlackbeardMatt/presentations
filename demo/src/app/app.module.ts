@@ -6,11 +6,10 @@ import { AppComponent } from './app.component';
 import { RoutingModule } from './app.routing';
 import { LandingComponent } from './landing/landing.component';
 import { MaterialModule } from './material.module';
-import { CorporateNonsenseChatService } from './services/corporate-nonsense-chat.service';
-import { CorporateNonsenseService } from './services/corporate-nonsense.service';
 import { NgxsModule } from '@ngxs/store';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { NgxsRouterPluginModule } from '@ngxs/router-plugin';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
@@ -27,8 +26,8 @@ import { NgxsRouterPluginModule } from '@ngxs/router-plugin';
     NgxsModule.forRoot([], { developmentMode: true }),
     NgxsLoggerPluginModule.forRoot(),
     NgxsRouterPluginModule.forRoot(),
+    SharedModule
   ],
-  providers: [CorporateNonsenseService, CorporateNonsenseChatService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

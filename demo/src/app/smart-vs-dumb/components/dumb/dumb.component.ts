@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
-import { Phrase } from 'src/app/models/phrase.model';
+import { Phrase } from 'src/app/shared/models/phrase.model';
 
 @Component({
   selector: 'app-dumb',

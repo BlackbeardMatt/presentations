@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CorporateNonsenseRxjsService } from '../../services/corporate-nonsense-rxjs.service';
 import { Observable } from 'rxjs';
-import { Phrase } from 'src/app/models/phrase.model';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { Phrase } from 'src/app/shared/models/phrase.model';
 
 @Component({
   selector: 'app-rxjs-page',

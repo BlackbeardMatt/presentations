@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { Phrase } from 'src/app/models/phrase.model';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Phrase } from 'src/app/shared/models/phrase.model';
 
 @Component({
   selector: 'app-nonsense-card',

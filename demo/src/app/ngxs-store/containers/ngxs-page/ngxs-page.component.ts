@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Store, Select } from '@ngxs/store';
 import { CorporateNonsenseState } from '../../store/state/corporate-nonsense.state';
 import { Observable } from 'rxjs';
-import { Phrase } from 'src/app/models/phrase.model';
 import { GetCorporateNonsense, GetSingleNonsense, RemoveNonsense } from '../../store/actions/corporate-nonsense.actions';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { Phrase } from 'src/app/shared/models/phrase.model';
 
 @Component({
   selector: 'app-ngxs-page',

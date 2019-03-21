@@ -1,7 +1,5 @@
 import { Action, Selector, State, StateContext } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { Phrase } from 'src/app/models/phrase.model';
-import { CorporateNonsenseChatService } from 'src/app/services/corporate-nonsense-chat.service';
 import {
   AddNonsense,
   GetCorporateNonsense,
@@ -9,6 +7,8 @@ import {
   StartCorporateNonsenseStream,
   RemoveNonsense
 } from '../actions/corporate-nonsense.actions';
+import { Phrase } from 'src/app/shared/models/phrase.model';
+import { CorporateNonsenseChatService } from 'src/app/shared/services/corporate-nonsense-chat.service';
 
 
 export class CorporateNonsenseStateModel {
