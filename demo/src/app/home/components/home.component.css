@@ -1,0 +1,8 @@
+.awesome-picture-of-owner {
+  background-image: url(../../../assets/me.jpg);
+  background-size: cover;
+}
+
+.nonsense-container .nonsense-card {
+  margin-top: .5em;
+}

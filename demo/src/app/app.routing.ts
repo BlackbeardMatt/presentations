@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { LandingComponent } from './landing/landing.component';
 
 const routes = [
   {
     path: '',
-    component: LandingComponent
+    loadChildren: './home/home.module#HomeModule'
   },
   {
     path: 'smartvsdumb',

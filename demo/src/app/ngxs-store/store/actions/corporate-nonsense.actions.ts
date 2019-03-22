@@ -1,4 +1,4 @@
-import { Phrase } from "src/app/shared/models/phrase.model";
+import { Phrase } from 'src/app/shared/models/phrase.model';
 
 export class StartCorporateNonsenseStream {
     static readonly type = '[Corporate Nonsense] Starting Corporate Nonsense';
