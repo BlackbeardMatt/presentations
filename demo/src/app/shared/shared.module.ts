@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { CorporateNonsenseChatService } from './services/corporate-nonsense-chat.service';
 import { CorporateNonsenseService } from './services/corporate-nonsense.service';
 import { CorporateCardComponent } from './components/corporate-card/corporate-card.component';
-import { NonsenseCardComponent } from '../ngxs-store/components/nonsense-card/nonsense-card.component';
 import { MaterialModule } from '../material.module';
+import { NonsenseCardComponent } from './components/nonsense-card/nonsense-card.component';
 
 const declarations = [
     CorporateCardComponent,
