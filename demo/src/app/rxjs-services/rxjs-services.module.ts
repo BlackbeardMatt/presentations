@@ -5,7 +5,6 @@ import { RxjsServicesRoutingModule } from './rxjs-services-routing.module';
 import { RxjsPageComponent } from './containers/rxjs-page/rxjs-page.component';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../material.module';
-import { CorporateNonsenseRxjsService } from './services/corporate-nonsense-rxjs.service';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
@@ -17,6 +16,6 @@ import { SharedModule } from '../shared/shared.module';
     SharedModule
   ],
   declarations: [RxjsPageComponent],
-  providers: [CorporateNonsenseRxjsService]
+  providers: []
 })
 export class RxjsServicesModule { }
