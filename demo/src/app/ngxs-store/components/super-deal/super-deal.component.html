@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card *ngIf="count > 0">
   <mat-card-title>
     The Best Deal Ever
   </mat-card-title>
@@ -12,4 +12,10 @@
   <mat-card-actions>
 <button mat-raised-button color="accent" (click)="superDeal.emit(true)">Get Super Deal</button>
   </mat-card-actions>
+</mat-card>
+
+<mat-card *ngIf="count <= 0">
+  <mat-card-title>
+    DEAL OVER!
+  </mat-card-title>
 </mat-card>
