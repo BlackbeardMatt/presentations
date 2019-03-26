@@ -8,8 +8,9 @@ import { MaterialModule } from './material.module';
 import { NgxsModule } from '@ngxs/store';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { NgxsRouterPluginModule } from '@ngxs/router-plugin';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 import { SharedModule } from './shared/shared.module';
-
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import { SharedModule } from './shared/shared.module';
     NgxsModule.forRoot([], { developmentMode: true }),
     NgxsLoggerPluginModule.forRoot(),
     NgxsRouterPluginModule.forRoot(),
-    SharedModule
+    NgxsReduxDevtoolsPluginModule.forRoot(),
+    NgxsStoragePluginModule.forRoot({ storage: 1 }),
+    SharedModule.forRoot()
   ],
   bootstrap: [AppComponent]
 })
